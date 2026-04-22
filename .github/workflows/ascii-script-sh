@@ -7,6 +7,10 @@ sudo apt-get install cowsay -y
 # Fix: cowsay lives in /usr/games/ on Ubuntu runners
 /usr/games/cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >> dragon.txt
 
+run: |
+  chmod +x ./your-folder-name/ascii-script.sh
+  ./your-folder-name/ascii-script.sh
+
 # This works fine
 grep -i "dragon" dragon.txt
 
