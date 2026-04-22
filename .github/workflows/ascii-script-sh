@@ -1,5 +1,17 @@
-sudu apt-get install cowsay -y
-cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >>dragon.txt
+#!/bin/bash
+
+# Fix: changed 'sudu' to 'sudo' and added update
+sudo apt-get update
+sudo apt-get install cowsay -y
+
+# Fix: cowsay lives in /usr/games/ on Ubuntu runners
+/usr/games/cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >> dragon.txt
+
+# This works fine
 grep -i "dragon" dragon.txt
+
+# This displays it in your GitHub Action logs
 cat dragon.txt
+
+# Final check
 ls -ltra
